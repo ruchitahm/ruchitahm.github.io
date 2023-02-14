@@ -1,18 +1,455 @@
 *{
     margin: 0;
     padding: 0;
-    font-family: sans-serif;
+    font-family: 'Poppins', sans-serif;
     box-sizing: border-box;
 }
-
+html{
+    scroll-behavior: smooth;
+}
 body{
     background: #080808;
-    color: #fff;
+    color: 
+    #fff;
 }
 #header{
     width: 100%;
     height: 100vh;
-    background-image: url(./images/background.png);
+    background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(22,224,189,1) 100%);
     background-size: cover;
     background-position: center;
 }
+.container{
+    padding: 50px 10%;
+}
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.logo{
+    width: 140px;
+}
+
+.navbarheader{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 40px 100px;
+    z-index: 1000;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.5s;
+}
+.navbarheader.sticky{
+    background: #fff;
+    padding: 0px 100px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+}
+.navbarheader .logo{
+    color: #fff;
+    font-size: 24px;
+    text-transform: uppercase;
+    text-decoration: none;
+    font-weight: 700;
+    letter-spacing: 2px;
+}
+.navbarheader.sticky .logo{
+    color: #111;
+}
+nav ul{
+    display: flex;
+}
+nav ul li{
+    position: relative;
+    list-style: none;
+}
+nav ul li a{
+    margin: 0 15px;
+}
+.navbarheader.sticky ul li a{
+    color: #111;
+
+}
+nav ul li{
+    display: inline-block;
+    list-style: none;
+    margin: 10px 20px;
+}
+nav ul li a{
+    color: #fff;
+    text-decoration: none;
+    font-size: 18px;
+    position: relative;
+    display: inline-block;
+}
+nav ul li a::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #16e0bd;
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    transition: 0.5s ;
+}
+nav ul li a:hover::after{
+    width: 100%;
+}
+
+.navbarheader.sticky .sidepanelopen li a{
+    color: #fff;
+}
+.navbarheader.sticky .sidepanelopen .fas{
+    color: #fff;
+}
+.navbarheader.sticky .sidepanelopen{
+    display: block;
+}
+.header-text{
+    margin-top: 20%;
+    font-size: 30px;
+}
+.header-text h1{
+    font-size: 60px;
+    margin-top: 20px;
+}
+.header-text h1 span{
+    color: #16e0bd;
+}
+.header-text .btn{
+        position: relative;
+        background: #16e0bd;
+        display: inline-block;
+        color: #fff;
+        margin-top: 40px;
+        padding: 10px 30px;
+        font-size: 18px;
+        text-transform: uppercase;
+        text-decoration: none;
+        letter-spacing: 2px;
+        font-weight: 500;
+}
+#about{
+    padding: 80px 0;
+    color: #ababab;
+}
+.row{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+}
+.about-col-1{
+    flex-basis: 35%;
+}
+.about-col-1 img{
+    width: 100%;
+    border-radius: 15px;
+}
+.about-col-2{
+    flex-basis: 60%;
+}
+.subtitle{
+    font-size: 60px;
+    font-weight: 600;
+    color: #fff;
+}
+.tabtitles{
+    display: flex;
+    margin: 20px 0 40px;
+}
+.tablinks{
+    margin-right: 50px;
+    font-size: 18px;
+    font-weight: 500;
+    cursor: pointer;
+    position: relative;
+}
+.tablinks::after{
+    content: '';
+    width: 0;
+    height: 3px;
+    background: #16e0bd;
+    position: absolute;
+    left: 0;
+    bottom: -8px;
+    transition: 0.5s;
+}
+.tablinks.active-link::after{
+    width: 50%;
+}
+.tab-contents ul li{
+    list-style: none;
+    margin: 10px 0;
+}
+.tab-contents ul li span{
+    color: #18b7a1;
+    font-size: 14px;
+}
+.tab-contents{
+    display: none;
+}
+.tab-contents.active-tab{
+    display: block;
+}
+
+#project{
+    padding: 50px 0;
+}
+.worklist{
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-gap: 40px;
+    margin-top: 50px;
+}
+.work{
+    border-radius: 10px;
+    position: relative;
+    overflow: hidden;
+}
+.work img{
+    width: 100%;
+    height: 55vh;
+    border-radius: 10px;
+    display: block;
+    transition: transform 0.5s;
+}
+.layer{
+    width: 100%;
+    height: 0%;
+    background: linear-gradient(rgba(0,0,0,0.6), #16e0bd);
+    border-radius: 10px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    padding: 0 40px;
+    text-align: center;
+    font-size: 14px;
+    transition: height 0.5s;
+}
+.layer h3{
+    font-weight: 500;
+    margin-bottom: 20px;
+}
+.layer a{
+    margin-top: 20px;
+    color: #16e0bd;
+    text-decoration: none;
+    font-size: 18px;
+    line-height: 60px;
+    background: #fff;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    text-align: center;
+}
+.work:hover img{
+    transform: scale(1.1);
+}
+.work:hover .layer{
+    height: 100%;
+}
+.btn{
+    display: block;
+    margin: 50px auto;
+    width: fit-content;
+    border: 1px solid #16e0bd;
+    padding: 14px 50px;
+    border-radius: 6px;
+    text-decoration: none;
+    color: #fff;
+    transition: background 0.5s;
+}
+.btn:hover{
+    background: #16e0bd;
+}
+
+.contact-left{
+    flex-basis: 35%;
+}
+.contact-right{
+    flex-basis: 60%;
+}
+.social-icons{
+    margin-top: 30px;
+}
+.social-icons a{
+    text-decoration: none;
+    font-size: 30px;
+    margin-right: 15px;
+    color: #ababab;
+    display: inline-block;
+    transition: transform 0.5s;
+}
+.social-icons a:hover{
+    color: #16e0bd;
+    transform: translateY(-5px);
+}
+.social-icons .fa-brands{
+    font-size: 40px;
+}
+.btn.btn2{
+    display: inline-block;
+    background: #16e0bd;
+}
+.contact-right form{
+    width: 100%;
+}
+form input, form textarea{
+    width: 100%;
+    border: 0;
+    outline: none;
+    background: #262626;
+    padding: 15px;
+    margin: 15px 0;
+    color: #fff;
+    font-size: 18px;
+    border-radius: 6px;
+    resize: none;
+}
+form .btn2{
+    padding: 14px 60px;
+    font-size: 18px;
+    margin-top: 20px;
+    cursor: pointer;
+}
+
+.contactInfoBx{
+    position: relative;
+}
+.contactInfoBx .box{
+    position: relative;
+    padding: 20px 0;
+    display: flex;
+}
+.contactInfoBx .box .icon{
+    min-width: 40px;
+    padding-top: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 24px;
+
+    color: #16e0bd;
+    margin-right: 15px;
+}
+.contactInfoBx .box .text{
+    display: flex;
+    margin-left: 20px;
+    font-size: 15px;
+    color: #fff;
+    flex-direction: column;
+    font-weight: 300;
+}
+.contactInfoBx .box .text h3{
+    font-weight: 600;
+    color: #16e0bd;
+    margin-bottom: 0;
+    font-size: 20px;
+}
+
+
+#msg{
+    color: #61b752;
+    margin-top: -40px;
+    display: block;
+}
+
+
+nav .fas{
+    display: none;
+}
+
+@media only screen and (max-width: 600px){
+     #header{
+        background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(22,224,189,1) 100%);
+    }
+    header, header.sticky{
+        padding: 0px 20px;
+    }
+    .navbarheader{
+        padding: 20px 100px;
+    }
+    .header-text{
+        margin-top: 100%;
+        font-size: 16px;
+    }
+  
+    .header-text h1{
+        font-size: 30px;
+    }
+    .header-text .btn{
+        margin-top: 20px;
+        padding: 10px 20px;
+        font-size: 16px;
+    }
+    nav .fas{
+        display: block;
+        font-size: 25px;
+        color: black;
+        margin-right: -2em;
+    }
+    nav .fa-times{
+        color: #fff;
+    }
+    nav ul{
+        background: #16e0bd;
+        position: fixed;
+        top: 0;
+        right: -200px;
+        width: 200px;
+        height: 100vh;
+        padding-top: 50px;
+        z-index: 2;
+        transition: right 0.5s;
+        display: block;
+    }
+    nav ul li{
+        display: block;
+        margin: 25px;
+    }
+    nav ul .fas{
+        position: absolute;
+        top: 25px;
+        left: 25px;
+        cursor: pointer;
+    }
+    .subtitle{
+        font-size: 40px;
+    }
+    .about-col-1, .about-col-2{
+        flex-basis: 100%;
+    }
+    .about-col-1{
+        margin-bottom: 30px;
+    }
+    .about-col-2{
+        font-size: 14px;
+    }
+    .about-col-2 p.description {
+        padding-right: 3%;
+    }
+    .tablinks{
+        font-size: 16px;
+        margin-right: 20px;
+    }
+    .tab-contents ul li{
+        padding-right: 3%;
+    }
+    .contact-left, .contact-right{
+        flex-basis: 100%;
+    }
+
+    .footer{
+        padding: 5px 10%;
+    }
+}
+
