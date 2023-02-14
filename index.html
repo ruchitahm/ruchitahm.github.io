@@ -7,25 +7,19 @@
         <title>Portfolio Website</title>
         <link rel="stylesheet" href="styles.css">
         <script src="https://kit.fontawesome.com/ac2de4a5a6.js" crossorigin="anonymous"></script>
-        <!-- <link rel="shortcut icon" type="image/x-icon" href="favicon.ico"> -->
-        <!-- <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script> -->
-        <!-- <script src="https://kit.fontawesome.com/c4254e24a8.js" crossorigin="anonymous"></script> -->
-    </head><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+       </head>
     <body>
         <header>
             <nav class="navbarheader">
             <img src="logo.png" class="logo" alt="logo">
             <ul id="sidemenu">
-                <li><a href="#header">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#project">Project</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <i class="fas fa-times" onclick="closemenu()"></i>
+                <li><a href="#header" onclick="sectn()">Home</a></li>
+                <li><a href="#about" onclick="sectn()">About</a></li>
+                <li><a href="#project" onclick="sectn()">Project</a></li>
+                <li><a href="#contact" onclick="sectn()">Contact</a></li>
+                <i class="fas fa-times"  onclick="closemenu()"></i>
             </ul>
             <i class="fas fa-bars" onclick="openmenu()"></i>
-            <!-- <span class="material-symbols-outlined">
-                menu
-                </span> -->
             </nav>
         </header>
 
@@ -203,6 +197,9 @@
             function closemenu(){
                 menu.style.right="-200px";
                 menu.classList.remove('sidepanelopen');
+            }
+            function sectn(){
+                menu.style.right="-200px";
             }
         </script>
 
