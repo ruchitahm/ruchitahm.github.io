@@ -1,5 +1,3 @@
-
-{/* <script> */}
 var tablinks = document.getElementsByClassName("tablinks");
 var tabcontents = document.getElementsByClassName("tab-contents");
 function opentab(tabname){
@@ -12,9 +10,8 @@ function opentab(tabname){
     event.currentTarget.classList.add("active-link");
     document.getElementById(tabname).classList.add("active-tab");
 }
-// </script>
 
-{/* <script> */}
+
 var menu = document.getElementById("sidemenu");
 function openmenu(){
     menu.style.right="0";
@@ -27,29 +24,6 @@ function closemenu(){
 function sectn(){
     menu.style.right="-200px";
 }
-// </script>
-
-{/* <script> */}
-// const scriptURL = 'https://script.google.com/macros/s/AKfycbyqGH_aplWFeH-z_YjvVU42VmvYM8wdCqIhIEs9GzAEBIZT3p6x4WzQS0iYldh3A4zV/exec'
-// const form = document.forms['submit-to-google-sheet']
-// const msg = document.getElementById("msg");
-// form.addEventListener('submit', e => {
-// e.preventDefault()
-// fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-//     .then(response => {
-//         msg.innerHTML = "Message send successfully!"
-//         setTimeout(function(){
-//             msg.innerHTML = ""
-//         }, 5000)
-//         e.preventDefault();
-//         form.reset();
-//         console.log('Success!', response)
-//     })
-//     .catch(error => console.error('Error!', error.message))
-// })
-// </script>
-
-{/* <script type="text/javascript"> */}
 
 window.addEventListener('scroll', function(){
     var header = document.querySelector('.navbarheader');
@@ -62,10 +36,9 @@ const messageEl = document.querySelector('#message');
 const form1 = document.querySelector('#contactform');
 
 const checkName = () => {
-
     let valid = false;
     const min = 3,
-        max = 25;
+          max = 25;
     const name = nameEl.value.trim();
 
     if (!isRequired(name)) {
@@ -144,28 +117,9 @@ const showSuccess = (input) => {
     error.textContent = '';
 }
 
-// const scriptURL = 'https://script.google.com/macros/s/AKfycbyqGH_aplWFeH-z_YjvVU42VmvYM8wdCqIhIEs9GzAEBIZT3p6x4WzQS0iYldh3A4zV/exec'
-// const form = document.forms['submit-to-google-sheet']
-// const msg = document.getElementById("msg");
-// form.addEventListener('submit', e => {
-// e.preventDefault()
-// fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-//     .then(response => {
-//         msg.innerHTML = "Message send successfully!"
-//         setTimeout(function(){
-//             msg.innerHTML = ""
-//         }, 5000)
-//         // e.preventDefault();
-//         form.reset();
-//         console.log('Success!', response)
-//     })
-//     .catch(error => console.error('Error!', error.message))
-// })
-
 const scriptURL = 'https://script.google.com/macros/s/AKfycbyqGH_aplWFeH-z_YjvVU42VmvYM8wdCqIhIEs9GzAEBIZT3p6x4WzQS0iYldh3A4zV/exec'
 const form = document.forms['submit-to-google-sheet']
 const msg = document.getElementById("msg");
-
 
 form.addEventListener('submit', function (e) {
     // prevent the form from submitting
@@ -209,25 +163,8 @@ form.addEventListener('submit', function (e) {
             document.querySelector('#email').disabled = false;
             document.querySelector('#message').disabled = false;
         }, 5000);
-    
-        // document.querySelectorAll('.success');
-        // document.querySelector(".form").find('.success').classList.remove("success");
     }
-    // this.disabled = true;
-    // const aa = document.querySelectorAll('.success');;
-    // console.log('#@@@@@', aa)
-    // // remove the error class
-    // // aa.classList.remove('error');
-    // aa.classList.add('1111');
-    // let aa = document.querySelectorAll('.success');
-    //     console.log('#@@@@@', aa)
-    //     aa.classList.add("1111")
 });
-
-
-  
-
-
 
 const debounce = (fn, delay = 500) => {
     let timeoutId;
@@ -256,53 +193,3 @@ form.addEventListener('input', debounce(function (e) {
             break;
     }
 }));
-
-// document.querySelector('.submitbtn').addEventListener('click', function (e) {
-//     // submitform.onclick = () => {
-//         // document.querySelector('#name').disabled = true;
-//     //     const elements = document.querySelectorAll('.success');
-//     // elements.forEach((element) => {
-//     //   element.classList.remove('success');
-//     // });
-//     document.querySelector('#name').disabled = true;
-//     document.querySelector('#email').disabled = true;
-//     document.querySelector('#message').disabled = true;
-//     // document.querySelector('textarea').disabled = true;
-//     setTimeout(function() {
-//         // document.querySelector('textarea').disabled = false;
-//         document.querySelector('#name').disabled = false;
-//         document.querySelector('#email').disabled = false;
-//         document.querySelector('#message').disabled = false;
-//     }, 5000);
-//       })
-      
-// function validate(){
-//     var name = document.getElementById("name").value;
-//     var email = document.getElementById("email").value;
-//     var message = document.getElementById("message").value;
-//     var error_message = document.getElementById("error_message");
-    
-//     error_message.style.padding = "10px";
-    
-//     var text;
-//     if(name.length < 2){
-//       text = "Please Enter valid Name";
-//       error_message.innerHTML = text;
-//       return false;
-//     }
-//     if(email.indexOf("@") == -1 || email.length < 4){
-//       text = "Please Enter valid Email";
-//       error_message.innerHTML = text;
-//       return false;
-//     }
-//     if(message.length <= 10){
-//       text = "Please Enter More Than 10 Characters";
-//       error_message.innerHTML = text;
-//       return false;
-//     }
-//     // alert("Form Submitted Successfully!");
-//     return true;
-//   }
-
-
-{/* </script> */}

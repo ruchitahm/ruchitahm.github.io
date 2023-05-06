@@ -120,6 +120,9 @@ nav ul li a:hover::after{
 .header-text h1 span{
     color: #16e0bd;
 }
+.header-text h3{
+    padding-left: 4%;
+}
 .header-text .btn{
         position: relative;
         background: #16e0bd;
