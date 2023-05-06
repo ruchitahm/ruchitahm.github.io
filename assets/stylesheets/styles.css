@@ -271,6 +271,7 @@ nav ul li a:hover::after{
 }
 .btn:hover{
     background: #16e0bd;
+    cursor: pointer;
 }
 
 .contact-left{
@@ -300,13 +301,15 @@ nav ul li a:hover::after{
 .btn.btn2{
     display: inline-block;
     background: #16e0bd;
+    
 }
 .contact-right form{
     width: 100%;
 }
 form input, form textarea{
     width: 100%;
-    border: 0;
+    /* border: 0; */
+    border: solid 2px #262626;
     outline: none;
     background: #262626;
     padding: 15px;
@@ -369,9 +372,37 @@ nav .fas{
     display: none;
 }
 
+:root {
+    --error-color: #dc3545;
+    --success-color: #28a745;
+    --warning-color: #ffc107;
+}
+
+.form-field input:focus {
+    outline: none;
+}
+
+.form-field.error input , .form-field.error textarea{
+    border-color: var(--error-color);
+}
+
+.form-field.success input, .form-field.success textarea {
+    border-color: var(--success-color);
+}
+
+.form-field small {
+    color: var(--error-color);
+    
+}
+
+.btn:focus {
+    outline: none;
+}
+
 @media only screen and (max-width: 600px){
      #header{
         background: linear-gradient(90deg, rgba(2,0,36,1) 0%, rgba(22,224,189,1) 100%);
+        width: 62vh;
     }
     header, header.sticky{
         padding: 0px 20px;
