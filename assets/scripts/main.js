@@ -14,22 +14,27 @@ function opentab(tabname){
 
 var menu = document.getElementById("sidemenu");
 function openmenu(){
+    //opens the side panel
     menu.style.right="0";
     menu.classList.add('sidepanelopen');
 }
 function closemenu(){
+      //closes the sidepanel
     menu.style.right="-200px";
     menu.classList.remove('sidepanelopen');
 }
 function sectn(){
+    //closes the sidepanel
     menu.style.right="-200px";
 }
 
 window.addEventListener('scroll', function(){
+    // adding sticky navbar
     var header = document.querySelector('.navbarheader');
     header.classList.toggle('sticky', window.scrollY>0);
 })
 
+// Contact form validation
 const nameEl = document.querySelector('#name');
 const emailEl = document.querySelector('#email');
 const messageEl = document.querySelector('#message');
@@ -147,12 +152,13 @@ form.addEventListener('submit', function (e) {
         })
         
         .catch(error => console.error('Error!', error.message))
+
         const elements = document.querySelectorAll('.success');
     elements.forEach((element) => {
       element.classList.remove('success');
 
     });
-
+// disableing the input fields
     document.querySelector('#name').disabled = true;
         document.querySelector('#email').disabled = true;
         document.querySelector('#message').disabled = true;
