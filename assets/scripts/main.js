@@ -74,7 +74,7 @@ const checkMessage = () => {
 
     let valid = false;
     const min = 5,
-        max = 25;
+        max = 1250;
     const message = messageEl.value.trim();
 
     if (!isRequired(message)) {
